@@ -1,0 +1,75 @@
+<section id="sk" class="sk">
+    <div class="wrapper sk__wrapper">
+       <h1 class="sk__title">{{layout.tytul}}</h1>
+       <div class="sk__cta">
+            <div class="sk__col sk__col--left">
+                <a href="tel:{{szablon.telefon}}" class="sk__cta--link sk__cta--linkbig">
+                    <img src="{{theme.link}}/assets/gfx/pages/tel_k.svg" alt="tel">
+                    {{szablon.telefon}}
+                </a>
+                <a href="mailto:{{szablon.email}}" class="sk__cta--link sk__cta--linkbig">
+                    <img src="{{theme.link}}/assets/gfx/pages/mail_k.svg" alt="mail">
+                    {{szablon.email}}
+                </a>
+                <br>
+                <div class="sk__cta--link sk__cta--linklow">
+                    <img src="{{theme.link}}/assets/gfx/pages/pin_k.svg" alt="pin">
+                    {{szablon.adres}}
+                </div>
+                <br>
+                <div class="sk__cta--item">{{szablon.godziny_otwarcia}}</div>
+                <br>
+                <div class="sk__cta--item">NIP {{szablon.nip}}</div>
+                <div class="sk__cta--item">KRS {{szablon.krs}}</div>
+                <div class="sk__cta--item">REGON {{szablon.regon}}</div>
+                <div class="sk__social">
+                    <div class="sk__social--box">
+
+                        {% if szablon.facebook %}
+                            <a class="sk__social--link2" target="_blank" rel="nofollow" href="{{szablon.facebook}}">
+                                <img src="{{theme.link}}/assets/gfx/pages/fb_k.svg" alt="facebook" />
+                            </a>
+                        {% endif %}
+
+                        {% if szablon.instagram %} 
+                            <a class="sk__social--link2" target="_blank" rel="nofollow" href="{{szablon.instagram}}">
+                                <img src="{{theme.link}}/assets/gfx/pages/inst_k.svg" alt="instagram" />
+                            </a>
+                        {% endif %}
+
+                        {% if szablon.linkedin %} 
+                            <a class="sk__social--link2" target="_blank" rel="nofollow" href="{{szablon.linkedin}}">
+                                <img src="{{theme.link}}/assets/gfx/pages/in_k.svg" alt="linkedin" />
+                            </a>
+                        {% endif %}
+                    
+                    </div>
+                    <div class="sk__social--line"></div>
+                </div>
+            </div>
+            <div class="sk__col sk__col--right">
+                <h3 class="sk__form--title">{{layout.tekst_nad_formularzem}}</h3>
+                <div class="sk__form">
+                    {% filter shortcodes %}
+                        {{layout.formularz}}
+                    {% endfilter %}
+                </div>
+            </div>
+       </div>
+    </div>
+    <div class="sk__map">
+        {# {% include 'elements/image.twig' with {img:layout.mapa} only %} #}
+        {% filter shortcodes %}
+        [ultimate_maps id="1"]
+                        
+                    {% endfilter %}
+    </div>
+    <div class="sk__popup popup">
+    <div class="popup__box">
+        <img src="{{theme.link}}/assets/gfx/pages/popup.png" class="popup__ok" alt="ok">
+        <div class="popup__title">{{komunikaty_do_popupow.strona_kontaktu.tytul}}</div>
+        <div class="popup__desc">{{komunikaty_do_popupow.strona_kontaktu.opis}}</div>
+        <div class="popup__close"> <img src="{{theme.link}}/assets/gfx/pages/close.svg" alt="close" /></div>
+    </div>
+</div>
+</section>

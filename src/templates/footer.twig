@@ -1,0 +1,92 @@
+{% if text_under_foot.tlo.url %}
+    <div class="hometext" style="background-image:url('{{text_under_foot.tlo.url}}');">
+        <div class="wrapper">
+        {% if text_under_foot.mniejszy_tytul_i_jedna_kolumna %}
+            <div class="hometext__top hometext__top--low">
+                <{{text_under_foot.rozmiar_1}} class="section__title hometext__lowtitle">{{text_under_foot.home_title}}</{{text_under_foot.rozmiar_1}}>
+                <div class="hometext__desc">{{text_under_foot.opis_1}}</div>
+                {% if text_under_foot.opis_2 %}
+                    <div class="hometext__top--more"><span class="moretextfoot">Rozwiń</span> <img src="{{theme.link}}/assets/gfx/footer/up.svg" alt="more" /></div>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="hometext__top">
+                <div class="hometext__top--col hometext__top--title">
+                    <{{text_under_foot.rozmiar_1}} class="section__title hometext__title">{{text_under_foot.home_title}}</{{text_under_foot.rozmiar_1}}>
+                    <div class="hometext__line"></div>
+                </div>
+                <div class="hometext__top--col hometext__top--desc">
+                    <div class="hometext__desc">{{text_under_foot.opis_1}}</div>
+                    {% if text_under_foot.opis_2 %}
+                        <div class="hometext__top--more"><span class="moretextfoot">Rozwiń</span> <img src="{{theme.link}}/assets/gfx/footer/up.svg" alt="more" /></div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="hometext__bottom">
+               <{{text_under_foot.rozmiar_2}} class="hometext__bottom--title">{{text_under_foot.tytul_mniejszy}}</{{text_under_foot.rozmiar_2}}>
+               <div class="hometext__bottom--row">
+                    <div class="hometext__bottom--col">{{text_under_foot.opis_2}}</div>
+                    <div class="hometext__bottom--col">{{text_under_foot.opis_3}}</div>
+               </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if ( (post.id !='217') and (post.id !='219') and (post.id !='34') ) %}
+    
+    {% include ['kzn_section.twig'] %}   
+
+{% endif %}
+<div class="kzn__popup popup">
+    <div class="popup__box">
+        <img src="{{theme.link}}/assets/gfx/pages/popup.png" class="popup__ok" alt="ok">
+        <div class="popup__title">{{komunikaty_do_popupow.kontakt_z_nami.tytul}}</div>
+        <div class="popup__desc">{{komunikaty_do_popupow.kontakt_z_nami.opis}}</div>
+        <div class="popup__close"> <img src="{{theme.link}}/assets/gfx/pages/close.svg" alt="close" /></div>
+    </div>
+</div>
+
+<div class="footer wrapper">
+    <div class="footer__col footer__col--1">
+        <a href="tel:{{szablon.telefon}}">{{szablon.telefon}}</a>
+        <a href="mailto:{{szablon.email}}">{{szablon.email}}</a>
+    </div>
+    <div class="footer__col footer__col--2">
+        <h3 class="footer__title">ADRES</h3>
+        <div class="footer__desc">{{szablon.adres}}</div>
+        <br/>
+        <div class="footer__desc">{{szablon.godziny_otwarcia}}</div>
+    </div>
+    <div class="footer__col footer__col--3">
+        <h3 class="footer__title">NIP/KRS/REGON</h3>
+        <div class="footer__desc">NIP {{szablon.nip}}</div>
+        <div class="footer__desc">KRS {{szablon.krs}}</div>
+        <div class="footer__desc">REGON {{szablon.regon}}</div>
+    </div>
+    <div class="footer__col footer__col--4">
+        <div class="footer__social">
+            {% if szablon.facebook %}
+                <a class="footer__top--link2" target="_blank" rel="nofollow" href="{{szablon.facebook}}">
+                    <img src="{{theme.link}}/assets/gfx/footer/fb_foot.svg" alt="facebook" />
+                </a>
+            {% endif %}
+            {% if szablon.instagram %} 
+                <a class="footer__top--link2" target="_blank" rel="nofollow" href="{{szablon.instagram}}">
+                    <img src="{{theme.link}}/assets/gfx/footer/inst_foot.svg" alt="instagram" />
+                </a>
+            {% endif %}
+            {% if szablon.linkedin %} 
+                <a class="footer__top--link2" target="_blank" rel="nofollow" href="{{szablon.linkedin}}">
+                    <img src="{{theme.link}}/assets/gfx/footer/in_foot.svg" alt="linkedin" />
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="copy">
+    <div class="wrapper">
+        &copy; 2023 Copyright UPIN. Creation <a href="https://it360.pl/" target="_blank">IT360</a>
+    </div>
+</div>

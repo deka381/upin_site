@@ -1,0 +1,22 @@
+<section id="jd" class="jd">
+    <div class="wrapper jd__wrapper">
+    <div class="jd__titlewrap">
+        <h3 class="jd__title">{{layout.jd_title}}</h3>
+        <img src="{{theme.link}}/assets/gfx/pages/arrowbtn_gray.svg" alt="arr">
+    </div>
+       <div class="jd__row">
+            {% for p in layout.jd_points %}
+                        <div class="jd__box">
+                            <div class="jd__box--top">
+                                {% include 'elements/image.twig' with {img:p.icon, class:"jd__icon jd__icon--main"} only %}
+                                {% include 'elements/image.twig' with {img:p.ikona_hover, class:"jd__icon jd__icon--hover"} only %}
+                                <div class="jd__box--nr">{{loop.index}}</div>
+                            </div>
+                            <div class="jd__box--bot">
+                                <div class="jd__box--title">{{p.tytul}}</div>
+                            </div>
+                        </div>
+            {% endfor %}
+       </div>
+    </div>
+</section>

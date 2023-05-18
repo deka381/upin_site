@@ -1,0 +1,38 @@
+<section id="zic" class="zic">
+    <div class="wrapper zic__wrapper">
+        <div class="zic__content">
+            <div class="zic__rotatecol">
+                <h2 class="zic__rotatecol--title">{{layout.tytul_sekcji}}</h2>
+            </div>    
+            <div class="zic__col">
+                {% for z in layout.zalety %}
+                    {% if loop.index > '3' %}
+                    <div class="zic__col--item hide">
+                        
+                    {% else %}
+                    <div class="zic__col--item">
+                        
+                    {% endif %}
+                        <div class="zic__col--titlebox">
+                            {% include 'elements/image.twig' with {img:z.ikona} only %}
+                            <h3 class="zic__col--title">{{z.tytul}}</h3>
+                        </div>
+                        <div class="zic__loadmore">
+                            <span class="zic__loadmore--moretextfoot">Rozwiń</span> <img src="{{theme.link}}/assets/gfx/footer/up.svg" alt="more" />
+                         </div>
+                        <div class="zic__col--desc">
+                            {{z.opis}}
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for z in layout.zalety %}
+                    {% if loop.index == '4' %}
+                        <div class="zic__more">
+                            <div class="zic__more--text">Czytaj więcej</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section> 

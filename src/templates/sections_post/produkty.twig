@@ -1,0 +1,22 @@
+<section id="post_prods" class="post__prods prods post__section wrapper">
+<div class="prods__top">
+    <h3 class="prods__sectiontitle">{{layout.tytul_sekcji}}</h3>
+    <img src="{{theme.link}}/assets/gfx/pages/arrowbtn_gray.svg" alt="arr">
+</div>
+    <div class="prods__wrapper">
+        {% for p in layout.produkty %}
+            <a href="{{p.link.url}}" class="prods__item">
+                <div class="prods__imgbox">
+                    {% include 'elements/image.twig' with {img:p.zdjecie, class:"prods__img"} only %}
+                    <div class="prods__shadow"></div>
+                </div>
+                <h3 class="prods__title">
+                    {{p.tytul}}
+                </h3>
+                <div class="prods__hide">
+                        <div class="prods__desc">{{p.opis}}</div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</section>

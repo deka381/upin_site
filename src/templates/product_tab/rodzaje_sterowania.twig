@@ -1,0 +1,54 @@
+<div class="ptab ptab_{{x}}" data-index="{{x}}" data-name='rodzaje_sterowania'>
+    <div class="ptab__tab ptab__col{{l.ilosc_kolumn}} ptab__rodzaje_sterowania">
+        {% for t in l.items %}
+        {% set tindex = loop.index %}
+            <div class="ptab__tab--box">
+                <div class="ptab__tab--title">{{t.tytul_item}}</div>
+                {% if t.czy_lista %}
+                
+                    <div class="ptab__tab--ul ptab__tab--ul__vertical">
+                        {% for i in t.item %}
+                            <div class="ptab__tab--item">
+                                <div class="ptab__tab--ulname">{{i.tytul_item}}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="ptab__tab--items">
+                        {% for i in t.item %}
+                         {% if i.lista %}
+                            <div class="ptab__tab--ul ptab__tab--ul__vertical">
+                                {% for lis in i.element_listy %}
+                                    <div class="ptab__tab--item">
+                                        <div class="ptab__tab--ulname">{{lis.tekst}}</div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="ptab__tab--item">
+                                {% set img = Image(i.obraz_item) %}
+                                <source srcset="{{img.src|towebp }}" type="image/webp">
+                                <source srcset="{{ img.src|tojpg }}" type="image/jpeg">
+                            
+                                <a href="{{ img.src|towebp }}" rel="lightbox[rodzaje_sterowania_{{x}}_{{tindex}}]" title="{{i.tytul_item}}">
+                                <img src="{{ img.src('medium')|towebp }}" alt="{{ img.alt }}" {% if not skipLazy %}loading="lazy"{% endif %} class="ptab__tab--imagelow">
+                                </a>
+                                <div class="ptab__tab--name">{{i.tytul_item}}</div>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+        {% endfor %}
+    </div>
+     <div class="ptab__footer">
+        <div class="ptab__footer--div">
+            <div class="warning">!</div>
+            <div class="ptab__footer--tekst">
+                Przedstawiony asortyment jest standardowy. Jeżeli potrzebujesz innego lub nietypowego rozwiązania, <a href="/kontakt/">skontaktuj się z nami.</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<section id="kzn" class="kzn kzn__big">
+    <div class="kzn__wrap">
+        <div class="kzn__wrapper wrapper">
+            <div class="kzn__titlebox">
+                <h3 class="kzn__title section__title">{{komunikaty_do_popupow.kontakt_z_nami.tytul_globalny_sekcji}}</h3>
+            </div>
+            <div class="kzn__form">
+                {% filter shortcodes %}
+                    {{komunikaty_do_popupow.kontakt_z_nami.formularz_kontakt_z_nami}}
+                {% endfilter %}
+            </div>
+        </div>
+    </div>
+</section>
+<div class="kzn__popup popup">
+    <div class="popup__box">
+        <img src="{{theme.link}}/assets/gfx/pages/popup.png" class="popup__ok" alt="ok">
+        <div class="popup__title">{{komunikaty_do_popupow.kontakt_z_nami.tytul}}</div>
+        <div class="popup__desc">{{komunikaty_do_popupow.kontakt_z_nami.opis}}</div>
+        <div class="popup__close"> <img src="{{theme.link}}/assets/gfx/pages/close.svg" alt="close" /></div>
+    </div>
+</div>

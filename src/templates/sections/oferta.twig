@@ -1,0 +1,26 @@
+<section id="oferta" class="oferta o">
+    <div class="wrapper o__wrapper">
+        <h2 class="o__title">{{layout.title}}</h2>
+
+        <div class="o__offers"> 
+            {% for kat in layout.category %}
+            {% set kat_name = kat.tytul_kategorii|split(' ') %}
+            
+                {% if loop.index == '1' %}
+                    <div class="o__offers--box o__offers--big" data-item="{{kat.slug_kategorii}}" id="katslug_{{loop.index}}">
+                {% else %}
+                    <div class="o__offers--box o__offers--low" data-item="{{kat.slug_kategorii}}" id="katslug_{{loop.index}}">
+                {% endif %}
+                        <h3 class="o__offers--title">{{kat_name[0]}} <span class="green">{{kat_name[1]}}</span></h3>
+                        <div class="o__offers--items">
+                            {# {% set postes =  get_produkt_ids(999,0,kat.name) %} #}
+                            {% for post in kat.produkty %}
+                            {% set o = Post(post) %}
+                                {% include 'elements/offer_item.twig' with {o:o} only %}
+                            {% endfor %}   
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+<section id="real" class="real">
+    <div class="wrapper real__wrapper">
+        <h3 class="real__sectiontitle section__title section__title--center">{{layout.tytul}}</h3>
+    </div>
+    <div class="real__row">
+        {% for post in layout.fotos %}
+            <div class="real__item">
+                {% set img = Image(post.foto) %}
+                <source srcset="{{img.src|towebp }}" type="image/webp">
+                <source srcset="{{ img.src|tojpg }}" type="image/jpeg">
+                
+                <a href="{{ img.src|towebp }}" rel="lightbox[real]" title="{{img.alt}}">
+                <img src="{{ img.src|towebp }}" alt="{{ img.alt }}" title="{{img.alt}}" {% if not skipLazy %}loading="lazy"{% endif %} class="ptab__tab--imagelow">
+                <div class="realimg__pod">{{img.alt}}</div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>

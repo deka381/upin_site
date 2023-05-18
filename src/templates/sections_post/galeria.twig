@@ -1,0 +1,25 @@
+<section id="post_gall" class="post__gall gall post__section">
+    <div class="gall__wrapper">
+        <div class="wrapper">
+            <div class="gall__slidertop">
+                {% for gal in layout.galeria %}
+                    <div class="gall__topitem">
+                        {# <a href="{{gal.url}}" rel="lightbox"> #}
+                            {% include 'elements/image.twig' with {img:gal.id, class:"gall__img"} only %}
+                        {# </a> #}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="wrapper_big">
+            <div class="gall__sliderbot">
+                {% for gal in layout.galeria %}
+                    <div class="gall__item">
+                        {% include 'elements/image.twig' with {img:gal.id, class:"gall__img"} only %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+</section>

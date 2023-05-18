@@ -1,0 +1,71 @@
+<header id="header">
+    <div class="header">
+        <div class="header__top">
+            <div class="wrapper content-wrapper">
+                <a class="header__top--link1" href="tel:{{szablon.telefon}}">
+                    <img src="{{theme.link}}/assets/gfx/header/tel_top.svg" alt="telefon" />
+                    {{szablon.telefon}}
+                </a>
+                <a class="header__top--link1" href="mailto:{{szablon.email}}">
+                    <img src="{{theme.link}}/assets/gfx/header/mail_top.svg" alt="mail" />
+                    {{szablon.email}}
+                </a>
+                {% if szablon.linkedin %} 
+                    <a class="header__top--link2" target="_blank" rel="nofollow" href="{{szablon.linkedin}}">
+                        <img src="{{theme.link}}/assets/gfx/header/in_top.svg" alt="linkedin" />
+                    </a>
+                {% endif %}
+                {% if szablon.facebook %}
+                    <a class="header__top--link2" target="_blank" rel="nofollow" href="{{szablon.facebook}}">
+                        <img src="{{theme.link}}/assets/gfx/header/fb_top.svg" alt="facebook" />
+                    </a>
+                {% endif %}
+                {% if szablon.instagram %} 
+                    <a class="header__top--link2" target="_blank" rel="nofollow" href="{{szablon.instagram}}">
+                        <img src="{{theme.link}}/assets/gfx/header/inst_top.svg" alt="instagram" />
+                    </a>
+                {% endif %}
+                {% if szablon.twitter %}
+                    <a class="header__top--link2" target="_blank" rel="nofollow" href="{{szablon.twitter}}">
+                        <img src="{{theme.link}}/assets/gfx/header/twitter_top.svg" alt="twitter" />
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="header__mid">
+            <div class="header__wrapper wrapper content-wrapper">
+                <div class="header__logowrap">
+                    <h1 class="header__logo" role="banner">
+                        <a class="header__logo__link" href="{{ site.url }}" rel="home">
+                        {% if (post.title=="Strona główna") %}
+                            <img src="{{ Image(szablon.logo).src }}" alt="Kocham broń">
+                        {% else %}
+                            <img src="{{ Image(szablon.logo).src }}" alt="{{ post.title }}">
+                        {% endif %}
+                            
+                        </a>            
+                    </h1>
+                </div>
+                <div class="header__menu-wrapper">
+                    {% include 'menu.twig' with {items: menus.menu_header.items, classes: 'header__menu'} %}
+                </div>
+
+                </div>
+                <div class="header__mobile">
+                    
+                    <div class="header__hamburger">
+                        <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80">
+                            <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                            <path class="line middle" d="m 30,50 h 40" />
+                            <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+                        </svg>
+                    </div>
+                    <div class="header__mobile-menu">
+                        {% include 'menu.twig' with {items: menus.menu_header.items, classes: 'header__menu'} %}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

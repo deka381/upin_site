@@ -1,0 +1,11 @@
+ <div class="tabs__bottom--item">
+    <a href="{{o.link}}" class="tabs__bottom--img">
+        {% include 'elements/image.twig' with {img:o._thumbnail_id} only %}        
+        <div class="hover">
+            {% include 'elements/image.twig' with {img:o.second_img} only %}        
+        </div>
+        <h3 class="tabs__bottom--title">
+            {{o.name}}      
+        </h3>
+    </a>
+</div>

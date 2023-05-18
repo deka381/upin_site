@@ -1,0 +1,28 @@
+<section id="s{{loop.index}}" class="qa">
+    <div class="wrapper content-wrapper qa__wrapper">
+    
+        <div class="qa__sectiontitle">
+            {% if layout.tytul_sekcji %}
+                {{layout.tytul_sekcji}}
+            {% else %}
+                FAQ - {{post.title}} - Pytania i odpowiedzi
+            {% endif %}
+        </div>
+        <div class="qa__row">
+            {% for qa in layout.faqs %}
+                {% if (loop.index == "1") %}
+                    <div class="qa__item active">
+                {% else %}
+                    <div class="qa__item">
+                {% endif %}
+                        <div class="qa__ask">
+                            <h3 class="qa__ask--title">{{qa.pytanie}}</h3>
+                        </div>
+                        <div class="qa__answ">
+                            <div class="qa__answ--desc">{{qa.odpowiedz}}</div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

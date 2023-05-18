@@ -1,0 +1,11 @@
+<section id="marki" class="marki">
+    <div class="marki__wrapper wrapper">
+        <div class="marki__row">
+            {% for m in layout.marki %}
+                <div class="marki__foto">
+                    {% include 'elements/image.twig' with {img:m} only %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

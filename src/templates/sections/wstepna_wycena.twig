@@ -1,0 +1,16 @@
+<section id="ww" class="ww">
+    <div class="ww__wrapper wrapper">
+        <div class="ww__row">
+            <div class="ww__col ww__img">
+                 {% include 'elements/image.twig' with {img:layout.foto} only %}
+            </div>
+            <div class="ww__col ww__text">
+                <div class="ww__box">
+                    <h3 class="section__title ww__title">{{layout.tytul}}</h3>
+                    <div class="section__desc ww__desc">{{layout.opis}}</div>
+                    <a href="{{layout.przycisk_link.url}}" class="ww__btn button button__main">{{layout.przycisk_tresc}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

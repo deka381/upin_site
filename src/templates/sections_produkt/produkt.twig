@@ -1,0 +1,67 @@
+{% set dataindex = loop.index %}
+<section id="p{{loop.index}}" class="p" data-index='{{loop.index}}'>
+    <div class="wrapper p__wrapper tabsiete__{{layout.strona_zdjecia}}">
+        <div class="p__content site__{{layout.strona_zdjecia}}">
+            <div class="p__gall">
+                {% if layout.zdjecia_produktu|length > 1 %}
+                <div class="p__gall--multi">
+                {% else %}
+                <div class="p__gall--multi hide">
+                {% endif %}
+                    {% for g in layout.zdjecia_produktu %}
+                        {% if (loop.index == '1') %}
+                            <div class="p__gall--box active">
+                        {% else %}
+                            <div class="p__gall--box">
+                        {% endif %}
+                                <img width='50' src="{{g.url}}" alt="{{g.name}}" class="p__gall--multiimg">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="p__gall--single">
+                    {% for s in layout.zdjecia_produktu|slice(0,1) %}
+                        <img src="{{s.url}}" alt="{{s.name}}" class="p__gall--multiimg">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="p__info">
+                <div class="p__info--infobox">
+                    <h3 class="p__info--title">{{layout.tytul_produkty}}</h3>
+                    <div class="p__info--desc"> {{layout.opis_produktu}} </div>
+                </div>
+                <div class="p__info--tabs">
+                    <div class="p__info--szcz"><span class="szcz_text">Pokaż szczegóły</span> <img src="{{theme.link}}/assets/gfx/pages/szcz.svg" alt="details"></div>
+                    {% if layout.informacje_techniczne.tytul %}
+                        <div class="p__info--tab" data-name='informacje_techincze'>{{layout.informacje_techniczne.tytul}}</div>
+                    {% endif %}
+                    {% if layout.rodzaje_sterowania.tytul %}
+                        <div class="p__info--tab" data-name='rodzaje_sterowania'>{{layout.rodzaje_sterowania.tytul}}</div>
+                    {% endif %}
+                    {% if layout.opcje.tytul %}
+                        <div class="p__info--tab" data-name='opcje'>{{layout.opcje.tytul}}</div>
+                    {% endif %}
+                    {% if layout.wzorniki_tkanin.tytul %}
+                        <div class="p__info--tab" data-name='wzorniki_tkanin'>{{layout.wzorniki_tkanin.tytul}}</div>
+                    {% endif %}
+                    {% if layout.wzorniki_osprzetu.tytul %}
+                        <div class="p__info--tab" data-name='wzorniki_osprzetu'>{{layout.wzorniki_osprzetu.tytul}}</div>
+                    {% endif %}
+                    {% if layout.przydatne_oslony.tytul %}
+                        <div class="p__info--tab" data-name='przydatne_oslony'>{{layout.przydatne_oslony.tytul}}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% include 'product_tab/informacje_techincze.twig' with {l:layout.informacje_techniczne , x:dataindex} only %}
+        {% include 'product_tab/rodzaje_sterowania.twig' with {l:layout.rodzaje_sterowania , x:dataindex} only %}
+        {% include 'product_tab/opcje.twig' with {l:layout.opcje , x:dataindex} only %}
+        {% include 'product_tab/wzorniki_tkanin.twig' with {l:layout.wzorniki_tkanin , x:dataindex} only %}
+        {% include 'product_tab/wzorniki_osprzetu.twig' with {l:layout.wzorniki_osprzetu , x:dataindex} only %}
+        {% include 'product_tab/przydatne_oslony.twig' with {l:layout.przydatne_oslony , x:dataindex} only %}
+        {% if layout.border_na_dole %}
+            <div class="p__break"></div>
+        {% else %}
+            <div class="p__break noborder"></div>
+        {% endif %}
+    </div>
+</section> 

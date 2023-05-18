@@ -1,0 +1,12 @@
+{# {% extends "tease.twig" %} #}
+<article class="tease tease-{{ post.post_type }} loop__{{loop.index}}" id="tease-{{ post.ID }}">
+{% block content %}
+    {% if post.thumbnail.src %}
+        <img class="post__img" src="{{ post.thumbnail.src }}" alt="{{post.title}}"/>
+    {% endif %}
+    <div class="tease__postbox">
+        <h2 class="h2"><a href="{{ post.link }}">{{ post.title }}</a></h2>
+        <a href="{{post.link}}"><img src="/wp-content/themes/upin/assets/gfx/pages/blogarr.svg" alt="{{ post.title }}" /></a>
+    </div>
+{% endblock %}
+</article>

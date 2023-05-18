@@ -1,0 +1,32 @@
+<section id="us" class="us">
+    <div class="us__bg">{% include 'elements/image.twig' with {img:layout.tlo} only %}</div>
+    <div class="wrapper us__wrapper">
+       <div class="us__col us__col--1">
+            <h1 class="us__col--title">{{layout.tytul}}</h1>
+            <div class="us__col--line"></div>
+            <div class="us__col--desc">{{layout.opis_1}}</div>
+            <div class="us__col--desc">{{layout.opis_2}}</div>
+       </div>
+       <div class="us__col us__col--2">
+            {% filter shortcodes %}
+                {{layout.formularz}}
+            {% endfilter %}
+       </div>
+    </div>
+</section>
+<div class="up__popup popup">
+    <div class="popup__box">
+        <img src="{{theme.link}}/assets/gfx/pages/popup.png" class="popup__ok" alt="ok">
+        <div class="popup__title">{{komunikaty_do_popupow.umow_pomiar.tytul}}</div>
+        <div class="popup__desc">{{komunikaty_do_popupow.umow_pomiar.opis}}</div>
+        <div class="popup__close"> <img src="{{theme.link}}/assets/gfx/pages/close.svg" alt="close" /></div>
+    </div>
+</div>
+<div class="us__popup popup">
+    <div class="popup__box">
+        <img src="{{theme.link}}/assets/gfx/pages/popup.png" class="popup__ok" alt="ok">
+        <div class="popup__title">{{komunikaty_do_popupow.umow_serwis.tytul}}</div>
+        <div class="popup__desc">{{komunikaty_do_popupow.umow_serwis.opis}}</div>
+        <div class="popup__close"> <img src="{{theme.link}}/assets/gfx/pages/close.svg" alt="close" /></div>
+    </div>
+</div>

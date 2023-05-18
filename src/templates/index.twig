@@ -1,0 +1,86 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="blogpage">
+
+    <div class="wrapper">
+        {% if wybrany_post %}
+            <div class="blog__first">
+                <div class="wrapper_inside">
+                    {% include ['tease-post-first.twig', 'tease.twig'] %}
+                </div>
+            </div>
+        {% endif %}
+    <div class="wrapper_inside">
+        <div class="blog__query bq">
+        
+            {% for post in posts|slice(0,1) %}
+               
+                {% set posttype = post.post_type %}
+                    {% if (posttype == "post") %}
+                         <div class="bq__wrap">
+                            <h1 class="bq__title">Blog</h1>
+                            <img src="{{theme.link}}/assets/gfx/pages/arrowbtn_gray.svg" alt="arr" class="bq__arrow">
+                        </div>
+                        <div class="blog__query--cats bq__cats">
+                            <img src="{{theme.link}}/assets/gfx/pages/arrowbtn_gray.svg" alt="arr" class="bq__arrow-mob">
+                            <div class="blog__query--category bq__cats--row">
+                                {% filter shortcodes %}
+                                    [post_cat]
+                                {% endfilter %}
+                            </div>
+                        </div>
+                    {% elseif (posttype =="produkt") %}
+                         <div class="bq__wrap">
+                         {% set post_terms  = post.terms() %}
+                            <h1 class="o__offers--title" style="margin-right:15px;">{{post_terms[0].name}} </h1>
+                            
+                            <img src="{{theme.link}}/assets/gfx/pages/arrowbtn_gray.svg" alt="arr" class="bq__arrow">
+                        </div>
+                    {% endif %}
+
+            {% endfor %}
+            
+           
+            </div>
+
+                <div class="project-tiles">
+                    <div class="blog__list">
+                    {% for post in posts|slice(0,1) %}
+                    {% set posttype = post.post_type %}
+                            {% if (posttype == "post") %}
+                            <div class="tease tease-post loop__1 loop__text">
+                                 {{szablon.tresc_w_blogu}}
+                            </div>
+                            {% endif %} 
+                    {% endfor %}
+
+                        {% for post in posts %}
+                            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}        
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% for post in posts|slice(0,1) %}
+               
+                {% set posttype = post.post_type %}
+                    {% if (posttype == "post") %}
+                        <div class="blog__pagination">
+                            <div class="blog_more">
+                                Zobacz więcej
+                            </div>
+                        </div>
+                    {% endif %}
+
+                
+
+            {% endfor %}
+                        {# {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} #}
+                    
+            </div>
+        </div>
+    </div>
+</div>
+   
+
+{% endblock %}

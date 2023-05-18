@@ -1,0 +1,7 @@
+{% if img %}
+    {% set img = Image(img) %}
+    <source srcset="{{img.src|towebp }}" type="image/webp">
+    <source srcset="{{ img.src|tojpg }}" type="image/jpeg">
+    <img src="{{ img.src|towebp }}" srcset="{{ img.srcset }}" sizes="{{ img.img_sizes }}" alt="{{ img.alt }}" {% if not skipLazy %}loading="lazy"{% endif %} class="{{class}}"">
+    {# <img src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="{{ img.img_sizes }}" alt="{{ img.alt }}" {% if not skipLazy %}loading="lazy"{% endif %}> #}
+{% endif %}    

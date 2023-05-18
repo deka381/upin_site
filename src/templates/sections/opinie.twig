@@ -1,0 +1,24 @@
+<section id="opinie" class="opinie">
+    <div class="opinie__wrapper wrapper">
+        <div class="opinie__titlewrap">
+            <h3 class="opinie__title">{{layout.tytul}}</h3>
+            <img src="{{theme.link}}/assets/gfx/pages/arrowbtn_gray.svg" alt="arr">
+        </div>
+        <div class="opinie__row">
+            {% for o in layout.opinions %}
+                <div class="opinie__box">
+                    <div class="opinie__desc">{{o.tresc}}</div>
+                    <div class="opinie__bot">
+                        <div class="opinie__img">
+                            {% include 'elements/image.twig' with {img:o.foto} only %}
+                        </div>
+                        <div class="opinie__boxname">
+                            <div class="opinie__name">{{o.name}}</div>
+                            <div class="opinie__skad">{{o.skad}}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

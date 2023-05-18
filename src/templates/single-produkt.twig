@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+            <section class="article-content">
+                {% for layout in post.meta('content_product')  %}
+                    {% include 'sections_produkt/'~layout.acf_fc_layout~'.twig' with {index:loop.index} %}
+                {% endfor %}
+            </section>
+
+        </article>
+    </div><!-- /content-wrapper -->
+{% endblock %}

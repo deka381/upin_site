@@ -1,0 +1,91 @@
+<section id="tabs" class="tabs">
+    <div class="wrapper tabs__wrapper">
+        <h2 class="tabs__title">{{layout.tabs_title}}</h2>
+        {# <div class="tabs__top">
+            <div class="tabs__top--line"></div> #}
+            
+            {# {% for kat in layout.kategorie %}
+                {% if loop.index == '1' %}
+                    <div class="tabs__top--item active activeshow" data-item="{{kat.slug}}">
+                        {{kat.name}}
+                    </div>
+                    
+                {% else %}
+                    <div class="tabs__top--item" data-item="{{kat.slug}}">
+                        {{kat.name}}
+                    </div>
+                {% endif %}
+            {% endfor %}
+                <div class="tabsline">></div>
+            <div class="tabs__top--line tabs__top--line2"></div>
+        </div>  #}
+        {# <div class="tabs__bottom"> 
+            {% for kat in layout.kategorie %}
+                {% if loop.index == '1' %}
+                    <div class="tabs__bottom--items active {{kat.slug}}" data-item="{{kat.slug}}">
+                {% else %}
+                    <div class="tabs__bottom--items {{kat.slug}}" data-item="{{kat.slug}}">
+                {% endif %}
+                        {% set postes =  get_produkt_ids(999,0,kat.name) %}
+                        {% for post in postes %}
+                        {% set o = Post(post) %}
+                            {% include 'elements/tabs_item.twig' with {o:o} only %}
+                        {% endfor %}   
+                    </div>
+            {% endfor %}
+        </div> #}
+
+
+        <div class="tabs__top">
+            <div class="tabs__top--line"></div>
+            
+            {% for kat in layout.category %}
+                {% if loop.index == '1' %}
+                    <div class="tabs__top--item active activeshow" data-item="{{kat.slug_kategorii}}" data-ide="id_{{loop.index}}">
+                        {{kat.tytul_kategorii}}
+                    </div>
+                    
+                {% else %}
+                    <div class="tabs__top--item" data-item="{{kat.slug_kategorii}}" data-ide="id_{{loop.index}}">
+                        {{kat.tytul_kategorii}}
+                    </div>
+                {% endif %}
+            {% endfor %}
+                <div class="tabsline">></div>
+            <div class="tabs__top--line tabs__top--line2"></div>
+        </div> 
+
+
+
+        <div class="tabs__bottom"> 
+            {% for kat in layout.category %}
+                {% if loop.index == '1' %}
+                    <div class="tabs__bottom--items active {{kat.slug_kategorii}} tabs__slick-id{{loop.index}}" data-item="{{kat.slug_kategorii}}" data-ide="id_{{loop.index}}">
+                {% else %}
+                    <div class="tabs__bottom--items {{kat.slug_kategorii}} tabs__slick-id{{loop.index}}" data-ide="id_{{loop.index}}" data-item="{{kat.slug_kategorii}}">
+                {% endif %}
+                        {# {% set postes =  get_produkt_ids(999,0,kat.name) %} #}
+                        {% for post in kat.produkty %}
+                        {% set o = Post(post) %}
+                            {% include 'elements/tabs_item.twig' with {o:o} only %}
+                        {% endfor %}   
+                    </div>
+            {% endfor %}
+        </div>
+        <div class="tabs__foto">
+            <div class="tabs__foto--box">
+                {% for kat in layout.kategorie %}
+                    <a href="{{kat.link_kateogrii}}" class="tabs__foto--item tabs__foto--item{{loop.index}}">
+                        {% include 'elements/image.twig' with {img:kat.kat_img} only %}
+                        <div class="tabs__foto--name">{{kat.name}}</div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="tabs__foto--btn">
+                <img src="{{theme.link}}/assets/gfx/pages/arrowbtn.svg" alt="arr">
+                <a href="{{layout.tabs__link.url}}" class="tabs__foto--link button button__main">{{layout.tabs_btn}}</a>
+            </div>
+            
+        </div>
+    </div>
+</section>

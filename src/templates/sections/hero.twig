@@ -1,0 +1,12 @@
+<section id="hero" class="hero">
+    <div class="wrapper hero__wrapper">
+        <div class="hero__content" data-aos="fade-right">
+            <h1 class="hero__title">{{layout.hero_title}}</h1>
+            <div class="hero__desc">{{layout.hero_desc}}</div>
+            <a href="{{layout.hero_link.url}}" class="hero__btn button button__main">{{layout.hero_btn}}</a>
+        </div>
+        <div class="hero__bg" data-aos="fade-left">
+            {% include 'elements/image.twig' with {img:layout.hero_bg} only %}
+        </div>
+    </div>
+</section>

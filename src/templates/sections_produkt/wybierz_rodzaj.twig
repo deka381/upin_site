@@ -1,0 +1,17 @@
+<section id="tabs" class="tabs">
+    <div class="wrapper tabs__wrapper">
+        <h2 class="tabs__title">Wybierz <span class="green">rodzaj</span></h2>
+
+        <div class="tabs__foto">
+            <div class="tabs__foto--box">
+                {% for kat in layout.rodzaje %}
+                    <a href="{{kat.rodzaj_link.url}}" class="tabs__foto--item">
+                        {% include 'elements/image.twig' with {img:kat.rodzaj_img} only %}
+                        <div class="tabs__foto--name">{{kat.rodzaj_tytul}}</div>
+                    </a>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+<section id="sp1" class="st">
+    <div class="wrapper st__wrapper">
+        <div class="st__content">
+            <div class="st__titlebox">
+                <div class="st__icon">
+                    {% include 'elements/image.twig' with {img:post._thumbnail_id} only %}
+                </div>
+                <h1 class="st__title">{{post.name}}</h1>
+            </div>
+            <div class="st__imgbox">
+                {% include 'elements/image.twig' with {img:layout.zdjecie_top} only %}
+            </div>
+        </div>
+    </div>
+</section> 

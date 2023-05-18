@@ -1,0 +1,11 @@
+ <div class="o__prod--item">
+    <a href="{{post.link}}" class="o__prod--img">
+        {% include 'elements/image.twig' with {img:post._thumbnail_id} only %}        
+        <div class="hover">
+            {% include 'elements/image.twig' with {img:post.second_img} only %}        
+        </div>
+        <h3 class="o__prod--title">
+            {{post.name}}      
+        </h3>
+    </a>
+</div>
