@@ -1,0 +1,243 @@
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 300;
+    src: url(../../assets/fonts/Manrope-Light.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../assets/fonts/Manrope-Regular.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    src: url(../../assets/fonts/Manrope-Medium.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    src: url(../../assets/fonts/Manrope-SemiBold.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../../assets/fonts/Manrope-Bold.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    src: url(../../assets/fonts/Manrope-Bold.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 900;
+    src: url(../../assets/fonts/Manrope-ExtraBold.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 300;
+    src: url(../../assets/fonts/Manrope-Medium.ttf);
+    font-display: swap;
+}
+
+* {
+    font-family: "Manrope", sans-serif;
+    color: $black1;
+} 
+a {
+    color: inherit;
+    text-decoration: inherit;
+    transition: all 0.2s;
+   
+    // &:hover {
+    //     color: $black1;
+    //     transition-duration: 0.2s;
+    //     text-decoration: none;
+    //     &::after{
+    //         width: 100%;
+    //         transition-duration: 0.3s;
+    //     }
+    // }
+}
+@mixin after_link {
+    position: relative;
+    &::before{
+        width: 0;
+        height: 1px;
+        background-color: $black1;
+        position: absolute;
+        bottom: -13.5px;
+        left: 0;
+        content: '';
+        transition-duration: 0.2s;
+    }
+    &:hover{
+         &::before{
+            width: 100%;
+            transition-duration: 0.3s;
+        }
+    }
+}
+@mixin after_link_active {
+    position: relative;
+    &::before{
+        height: 1px;
+        background-color: $black1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        transition-duration: 0.2s;
+        width: 100%;
+    }
+    &:hover{
+         &::before{
+            transition-duration: 0.3s;
+            height: 2px;
+        }
+    }
+}
+@mixin fs90 {
+    font-size: 90px;
+    @include to(1350px) {
+        font-size: 50px;
+    }
+    @include to(1080px) {
+        font-size: 45px;
+    }
+    @include to(920px) {
+        font-size: 40px;
+    }
+    @include to(600px) {
+        font-size: 35px;
+    }
+}
+
+@mixin fs80 {
+    font-size: 80px;
+    @include to(1350px) {
+        font-size: 50px;
+    }
+    @include to(1080px) {
+        font-size: 45px;
+    }
+    @include to(920px) {
+        font-size: 40px;
+    }
+    @include to(600px) {
+        font-size: 35px;
+    }
+}
+@mixin fs42 {
+    font-size: 42px;
+    @include to(1350px) {
+        font-size: 47px;
+    }
+    @include to(1080px) {
+        font-size: 42px;
+    }
+    @include to(920px) {
+        font-size: 38px;
+    }
+    @include to(600px) {
+        font-size: 33px;
+    }
+}
+@mixin fs38 {
+    font-size: 38px;
+    @include to(1350px) {
+        font-size: 30px;
+    }
+    @include to(1080px) {
+        font-size: 28px;
+    }
+    @include to(920px) {
+        font-size: 26px;
+    }
+    @include to(600px) {
+        font-size: 24px;
+    }
+}
+@mixin fs36 {
+    font-size: 36px !important;
+    @include to(1350px) {
+        font-size: 30px !important;
+    }
+    @include to(1080px) {
+        font-size: 28px !important;
+    }
+    @include to(920px) {
+        font-size: 26px !important;
+    }
+    @include to(600px) {
+        font-size: 24px !important;
+    }
+}
+@mixin fs28 {
+    font-size: 28px;
+    @include to(1080px) {
+        font-size: 22px;
+    }
+    @include to(600px) {
+        font-size: 18px;
+    }
+}
+@mixin fs22 {
+    font-size: 22px;
+    @include to(1080px) {
+        font-size: 20px;
+    }
+    @include to(600px) {
+        font-size: 18px;
+    }
+}
+@mixin fs18 {
+    font-size: 18px;
+    // @include to(920px) {
+    //     font-size: 16px;
+    // }
+}
+@mixin fs16 {
+    font-size: 16px;
+    // @include to(920px) {
+    //     font-size: 14px;
+    // }
+}
+@mixin fs14 {
+    font-size: 14px;
+}
+@mixin fs12 {
+    font-size: 12px;
+}
+
+
+.color-white{
+    color:#fff;
+}
+.bold{
+    font-weight: bold;
+}
+.fs36{
+    @include fs36;
+}
+.center *{
+    text-align: center;
+    max-width: 814px;
+    margin: 0 auto;
+}

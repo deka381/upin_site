@@ -1,0 +1,72 @@
+.ww{
+    padding-bottom: 55px;
+    @include to (1684px){
+        padding-bottom: 15px;
+    }
+    &__btn{
+        text-transform: uppercase;
+    }
+    &__row{
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 20px ;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        @include to (960px){
+            border-radius: 20px;
+            flex-wrap: wrap;
+            // border-radius: 20px 20px 0 0;
+        }
+    }
+    &__col{
+        width: calc(50% - 10px);
+        height: 375px;
+        @include to (1684px){
+            height: 280px;
+        }
+        @include to (960px){
+            width: 100%;
+            margin-bottom: 15px;
+            height: unset;
+            min-height: unset;
+        }
+    }
+    &__title{
+        @include to (1684px){
+            font-size: 27px;
+        }
+    }
+    &__img{
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+    &__text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include to (960px){
+            align-items: flex-start;
+        }
+    }
+    &__desc{
+        font-weight: 500;
+        color: $bg_b1;
+        @include to (1684px){
+            font-size: 12px;
+        }
+    }
+    &__btn{
+        margin-top: 30px;
+    }
+    &__box{
+        
+        @include to (600px){
+            padding: 10px;
+        }
+    }
+}

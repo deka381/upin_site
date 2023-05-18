@@ -1,0 +1,43 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Your styles here
+$slick-font-path: "~slick-carousel/slick/fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "~slick-carousel/slick/" !default;
+$slick-arrow-color: black !default;
+@import "~slick-carousel/slick/slick.scss";
+@import "~slick-carousel/slick/slick-theme.scss";
+
+@import 'modules/mixins.scss';
+@import 'modules/variables.scss';
+@import 'modules/struct.scss';
+@import 'modules/helpers.scss'; 
+@import 'modules/typo.scss'; 
+@import 'modules/buttons.scss'; 
+
+@import 'partials/header.scss'; 
+@import 'partials/hero.scss'; 
+@import 'partials/tabs.scss'; 
+@import 'partials/tzt.scss'; 
+@import 'partials/jd.scss'; 
+@import 'partials/cta.scss'; 
+@import 'partials/opinie.scss'; 
+@import 'partials/marki.scss'; 
+@import 'partials/t2c.scss'; 
+@import 'partials/ww.scss'; 
+@import 'partials/kzn.scss'; 
+@import 'partials/popup.scss'; 
+@import 'partials/footer.scss'; 
+@import 'partials/sk.scss'; 
+@import 'partials/oferta.scss'; 
+@import 'partials/us.scss'; 
+@import 'partials/blog.scss'; 
+@import 'partials/single.scss'; 
+@import 'partials/uw.scss'; 
+
+@import 'partials/prod/st.scss';  
+@import 'partials/prod/zic.scss'; 
+@import 'partials/prod/pmain.scss';  
+@import 'partials/prod/info_tech.scss';  
+@import 'partials/prod/realizacje.scss';  
+@import 'partials/prod/faq.scss';  

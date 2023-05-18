@@ -1,0 +1,20 @@
+.t2c{
+    &__row{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include to (960px){
+            flex-wrap: wrap;
+        }
+    }
+    &__col{
+        width: calc(50% - 10px);
+        @include to (960px){
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+    &__title{
+        margin-bottom: 20px;
+    }
+}

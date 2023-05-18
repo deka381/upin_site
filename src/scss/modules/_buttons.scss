@@ -1,0 +1,50 @@
+.button{
+    padding:10px 26px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    &__red{
+        border: 2px solid $red;
+        background-color: $red;
+        color: #fff;
+        &:hover{
+            text-decoration: none;
+            text-decoration: none;
+            background-color: rgba(255,255,255,0);
+            color: $black;
+        }
+    }
+    &__main{
+        max-width: 240px;
+        justify-content: center;
+        padding: 15px 10px;
+        background-color: $green3;
+        text-align: center;
+        transition-duration: 0.1s;
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5em;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        @include to (1684px){
+            font-size: 14px;
+        }
+        &:hover{
+            color: #fff;
+            background-color: $black2;
+            transition-duration: 0.2s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+    }
+    &__pdf{
+        max-width: 350px;
+        @include to (600px){
+            font-size: 16px;
+        }
+    }
+}

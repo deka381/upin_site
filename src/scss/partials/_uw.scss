@@ -1,0 +1,90 @@
+.uw{
+    &__row{
+        display: flex;
+        align-items: center;
+        min-height: 144px;
+        background-color: #fff;
+        border-radius: 21px;
+        justify-content: space-between;
+        padding-left: 0;
+        @include to (1684px){
+            min-height: 106px;   
+        }
+        @include to (960px){
+            flex-wrap: wrap;
+        }
+    }
+    &__box{
+        width: calc(25% - 10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include to (960px){
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        .button{
+            width: 100%;
+            @include to (1684px){
+                max-width: 220px !important;
+            }
+        }
+    }
+    &__link{
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 120%;
+        color: $green3;
+        display: flex;
+        align-items: center;
+        @include to (1684px){
+            font-size: 21px;
+        }
+        img{
+            margin-right: 5px;
+        }
+        &:hover{
+            text-decoration: none;
+            color: #2E2E2C;
+        }
+    }
+    &__textbox{
+        background: #2E2E2C;
+        border-radius: 21px;
+        height: 144px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        @include to (1684px){
+            height: 106px;
+            padding-left: 15px;
+            padding-right: 15px;
+            min-width: 290px;
+        }
+        @include to (1300px){
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @include to (960px){
+            height: auto;
+            padding: 20px;
+        }
+        &--text{
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 120%;
+            text-align: center;
+            margin-bottom: 0;
+            color: #FFFFFF;
+            @include to (1684px){
+                font-size: 17px;
+            }
+        }
+    }
+}

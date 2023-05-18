@@ -1,0 +1,63 @@
+#content {
+    overflow: hidden;
+}
+.wrapper {
+    max-width: 1646px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include to (1684px){
+        max-width: 1077px; 
+    }
+    @include to ($breakpoint-md){
+        padding: 0 5px;
+    }
+    @include to (920px){
+        padding: 0 20px;
+    }
+}
+.wrapper_inside {
+    max-width: 1602px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include to (1684px){
+        max-width: 1300px;
+    }
+    @include to ($breakpoint-md){ 
+        padding: 0 10px;
+    }
+}
+.wrapper_low {
+    max-width: 902px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include to ($breakpoint-md){ 
+        padding: 0 10px;
+    }
+}
+.wrapper_big {
+    max-width: 1702px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include to ($breakpoint-md){ 
+        padding: 0 10px;
+    }
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.separator{
+    padding-top: 45px;
+    width: 100%;
+    @include to ($breakpoint-md ){
+        padding-top: 25px;
+    } 
+}
+body{
+    background-color: #F5F5F5;
+}

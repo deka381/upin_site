@@ -1,0 +1,75 @@
+.marki{
+    padding-top: 55px;
+    padding-bottom: 55px;
+    @include to (1684px){
+        padding-bottom: 35px;
+        padding-top: 10px;
+    }
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__foto{
+        display: flex !important;
+        justify-content: center;
+        height: 36px;
+        align-items: center;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 15px;
+        @include to (1684px){
+            height: 27px;
+        }
+        @include to (600px){
+            width: calc(50% - 10px);
+            margin-left: 0;
+            margin-right: 0;
+        }
+        img{
+            max-height: 100%;
+            width: auto;
+            max-width: 100%;
+            filter: grayscale(1);
+            @include to (1684px){
+                max-height: 27px;
+            }
+            @include to (600px){
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+    .slick-slide {
+        margin: 0 10px;
+    }
+  
+    /* the parent */
+    .slick-list {
+        margin: 0 -10px;
+    }
+    .slick-dots{
+        bottom: -45px;
+        li{
+            button{
+                width: 15px;
+                height: 15px;
+                background-color: #fff;
+                border: 1px solid #D1D3D4;
+                transition-duration: 0.2s;
+                border-radius: 50%;
+                &::before{
+                    display: none;
+                }
+            }
+            &.slick-active{
+                button{
+                    background-color: $green2;
+                    transition-duration: 0.2s;
+                }
+            }
+        }
+    }
+}
